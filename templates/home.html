@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trip Maker</title>
+</head>
+<body>
+    {% load socialaccount %}
+
+    {% if user.is_authenticated %}
+    
+    
+    
+    <p>You are signed in as {{user.email}} </p>
+    <a href = 'logout'>Logout</a>
+
+        <h2>Your Scheduled Trips</h2>
+        
+            
+            
+                <h3>Destination: {{i.trip.dest}} </h3>
+                <h3>Start Date: {{i.trip.date_start}} </h3>
+                <h3>End Date: {{i.trip.date_end}} </h3>
+                <h3>Estimated Expense: {{i.trip.est_exp}} </h3>
+
+                          
+
+                <h3>Event: {{ j.name }} </h3>
+                <h3>Start Date & Time: {{j.start}} </h3>
+                <h3>Description: {{ j.desc }}</h3>
+                <h3>Event Expense: {{ j.exp }} </h3>
+                
+        </p>
+
+
+        <a href = 'createtrip'>Create Trip</a>
+        <a href = '#'>Join Trip</a>
+
+    
+    {%else%}
+    <h2>Google Login</h2>
+    <a href = "{% provider_login_url 'google'%}">Login With Google</a>
+    {% endif %}
+
+    
+    
+
+</body>
+</html>

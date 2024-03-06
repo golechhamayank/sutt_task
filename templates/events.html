@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method = "POST">
+        {% csrf_token %}
+        {{form|crispy}}
+            <label for="add_wingie">Do you wish to add a wingie and continue? (type YES or NO)</label>
+            <input name="add_wingie" type="text">
+            <button type="submit">Submit</button></a>
+            
+            
+            
+    </form>
+
+    
+{% endblock content %}
+    

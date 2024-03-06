@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load socialaccount %}
+
+    {% if user.is_authenticated%}
+        <script> window.location.href = "{% url 'home' %}" </script> 
+    {% endif %}
+ 
+    <h2>Google Login</h2>
+    <a href = "{% provider_login_url 'google'%}">Login With Google</a>
+
+{% endblock content %}
